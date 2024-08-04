@@ -1,12 +1,12 @@
 # 🚀 Welcome to Blockchain Basics! 🌐
 
-Let’s dive into the world of blockchain with our step-by-step guide. Whether you're a newbie or an aspiring developer, this guide will help you set up a crypto wallet, get testnet faucets, and deploy your very own Token smart contract on Arbitrum testnet.
+Let’s dive into the world of blockchain with our step-by-step guide. Whether you're a newbie or an aspiring developer, this guide will help you set up a crypto wallet, get testnet faucets, and deploy your very own smart contract on Arbitrum testnet.
 
 ## 📚 Table of Contents
 
 - [Setting Up MetaMask 🦊](#setting-up-metamask)
 - [Getting Testnet Faucets 💧](#getting-testnet-faucets)
-- [Deploying a Token Smart Contract 🖼️](#deploying-a-token-smart-contract)
+- [Deploying a Smart Contract 🖼️](#deploying-a-smart-contract)
 
 ## Setting Up MetaMask 🦊
 
@@ -56,21 +56,26 @@ For more details on how to setup a MetaMask wallet, visit [this link](https://co
 
 Whooaa! 🎉 You now have the faucet ETH in your address.
 
-## Deploying a Token Smart Contract 🖼️
+## Deploying a Smart Contract 🖼️
 
-Let's deploy your very own Token smart contract on the Arbitrum testnet.
+Let's deploy your very own smart contract on the Arbitrum testnet.
 
 ### What is an ERC-20 Token?
 An ERC-20 token is a type of digital asset on the Ethereum blockchain that adheres to the ERC-20 standard, ensuring consistency and compatibility across the ecosystem.
 
 This standard defines a set of rules and functions that all tokens must follow, allowing them to seamlessly interact with decentralized applications (dApps), wallets, and exchanges on the Ethereum network.
 
+### What is an NFT?
+NFTs, or Non-Fungible Tokens, are unique digital assets that represent ownership of a specific item or piece of content on the blockchain. Unlike cryptocurrencies such as Bitcoin or Ethereum, NFTs are indivisible and unique, making them perfect for representing ownership of digital art, collectibles, and more. 🎨
+
+This Solidity contract combines ERC20 and ERC721 tokens to create a content platform where creators can publish content, receive tips in the form of an ERC20 token, and charge subscription fees for exclusive content access. The CreatorToken is an ERC20 token used for tipping and subscriptions, while CreatorPlatform is an ERC721 contract for managing and tracking content and subscriptions.
+
 ### Step 1: Clone the Repository 
-First, let's clone the repository that contains our Token smart contract.
+First, let's clone the repository that contains our smart contract.
 
 ```bash
-git clone https://github.com/Bhumi18/erc20-solidity.git
-cd erc20-solidity
+git clone https://github.com/Bhumi18/CreatorPlatform-example.git
+cd CreatorPlatform-example
 ```
 ### Step 2: Install Dependencies
 Navigate to the cloned repository and install the necessary dependencies. 
@@ -130,13 +135,13 @@ With our contract compiled, we can now deploy it to the Arbitrum testnet. Make s
 ```bash
 npx hardhat ignition deploy ignition/modules/Token.ts --network arbitrumSepolia
 ```
-Boom!🚀 You have just deployed your Token contract. Use the contract address to see your deployed contract on the [explorer](https://sepolia.arbiscan.io/).
+Boom!🚀 You have just deployed your contract. Use the contract address to see your deployed contract on the [explorer](https://sepolia.arbiscan.io/).
 
 ### Step 7: Verify the Contract
 After deployment, we can verify our contract on Arbitrum Sepolia Scan. 
 
 ```bash
-npx hardhat verify YOUR_CONTRACT_ADDRESS --network arbitrumSepolia
+npx hardhat verify YOUR_CONTRACT_ADDRESS "CONSTRUCTOR_ARGUMENT1" --network arbitrumSepolia
 ```
-You can see my deployed contract on this [link](https://sepolia.arbiscan.io/address/0x3aE5d117E1f1A337364df89890d9a2d4D405f7AA).
+You can see my deployed contract on this [link](https://sepolia.arbiscan.io/address/0x4d21136a064b4a32db470aac3743c2a8442f67bc).
 
